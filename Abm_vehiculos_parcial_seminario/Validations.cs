@@ -68,12 +68,10 @@ namespace Abm_vehiculos_parcial_seminario
 				   Regex.IsMatch(licensePlate, motoPattern1) ||
 				   Regex.IsMatch(licensePlate, motoPattern2);
 		}
-
-
 		public static bool ValidNumericPrice(string price)
 		{
 			// Patrón para validar precios que contienen solo números, puntos y comas
-			string pattern = @"^\d{1,3}(,\d{3})*(\.\d+)?$|^\d+(\.\d+)?$";
+			string pattern = @"^\d{1,3}(\.\d{3})*(,\d{2})?$|^\d+,\d{2}$";
 
 			return Regex.IsMatch(price, pattern);
 		}

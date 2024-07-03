@@ -28,9 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btn_vehicles_down = new System.Windows.Forms.Button();
 			this.btn_getDataVehicles = new System.Windows.Forms.Button();
 			this.btn_updateVehicle = new System.Windows.Forms.Button();
 			this.btn_unsubscribeVehicle = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(32)))), ((int)(((byte)(71)))));
+			this.panel1.Controls.Add(this.btn_vehicles_down);
 			this.panel1.Controls.Add(this.btn_getDataVehicles);
 			this.panel1.Controls.Add(this.btn_updateVehicle);
 			this.panel1.Controls.Add(this.btn_unsubscribeVehicle);
@@ -56,6 +58,25 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(284, 626);
 			this.panel1.TabIndex = 4;
+			// 
+			// btn_vehicles_down
+			// 
+			this.btn_vehicles_down.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_vehicles_down.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(32)))), ((int)(((byte)(71)))));
+			this.btn_vehicles_down.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(91)))), ((int)(((byte)(97)))));
+			this.btn_vehicles_down.FlatAppearance.BorderSize = 0;
+			this.btn_vehicles_down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btn_vehicles_down.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_vehicles_down.ForeColor = System.Drawing.Color.WhiteSmoke;
+			this.btn_vehicles_down.Location = new System.Drawing.Point(2, 429);
+			this.btn_vehicles_down.Name = "btn_vehicles_down";
+			this.btn_vehicles_down.Size = new System.Drawing.Size(279, 52);
+			this.btn_vehicles_down.TabIndex = 6;
+			this.btn_vehicles_down.Text = "Vehiculos archivados";
+			this.btn_vehicles_down.UseVisualStyleBackColor = false;
+			this.btn_vehicles_down.Click += new System.EventHandler(this.btn_vehicles_down_Click);
+			this.btn_vehicles_down.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+			this.btn_vehicles_down.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
 			// 
 			// btn_getDataVehicles
 			// 
@@ -73,6 +94,8 @@
 			this.btn_getDataVehicles.Text = "Ver vehiculos";
 			this.btn_getDataVehicles.UseVisualStyleBackColor = false;
 			this.btn_getDataVehicles.Click += new System.EventHandler(this.btn_getDataVehicles_Click);
+			this.btn_getDataVehicles.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+			this.btn_getDataVehicles.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
 			// 
 			// btn_updateVehicle
 			// 
@@ -89,6 +112,8 @@
 			this.btn_updateVehicle.Text = "Actualizar vehiculo";
 			this.btn_updateVehicle.UseVisualStyleBackColor = false;
 			this.btn_updateVehicle.Click += new System.EventHandler(this.btn_updateVehicle_Click);
+			this.btn_updateVehicle.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+			this.btn_updateVehicle.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
 			// 
 			// btn_unsubscribeVehicle
 			// 
@@ -105,6 +130,8 @@
 			this.btn_unsubscribeVehicle.Text = "Dar de baja vehiculo";
 			this.btn_unsubscribeVehicle.UseVisualStyleBackColor = false;
 			this.btn_unsubscribeVehicle.Click += new System.EventHandler(this.btn_unsubscribeVehicle_Click);
+			this.btn_unsubscribeVehicle.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+			this.btn_unsubscribeVehicle.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
 			// 
 			// btn_newVehicle
 			// 
@@ -122,6 +149,8 @@
 			this.btn_newVehicle.Text = "Agregar vehiculo";
 			this.btn_newVehicle.UseVisualStyleBackColor = false;
 			this.btn_newVehicle.Click += new System.EventHandler(this.btn_newVehicle_Click);
+			this.btn_newVehicle.MouseEnter += new System.EventHandler(this.btn_MouseEnter);
+			this.btn_newVehicle.MouseLeave += new System.EventHandler(this.btn_MouseLeave);
 			// 
 			// header_panel
 			// 
@@ -168,26 +197,26 @@
 			this.dgv_data.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
 			this.dgv_data.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.dgv_data.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-			dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
-			dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-			dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
-			dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-			dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(109)))), ((int)(((byte)(255)))));
-			dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgv_data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+			dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+			dataGridViewCellStyle5.ForeColor = System.Drawing.Color.WhiteSmoke;
+			dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+			dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(109)))), ((int)(((byte)(255)))));
+			dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgv_data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
 			this.dgv_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F);
-			dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-			dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(4, 8, 1, 8);
-			dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
-			dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-			dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgv_data.DefaultCellStyle = dataGridViewCellStyle4;
-			this.dgv_data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
+			dataGridViewCellStyle6.Font = new System.Drawing.Font("Calibri", 12F);
+			dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+			dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(4, 8, 1, 8);
+			dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(63)))));
+			dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+			dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+			this.dgv_data.DefaultCellStyle = dataGridViewCellStyle6;
+			this.dgv_data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
 			this.dgv_data.Location = new System.Drawing.Point(308, 132);
 			this.dgv_data.Name = "dgv_data";
 			this.dgv_data.ReadOnly = true;
@@ -199,6 +228,9 @@
 			this.dgv_data.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgv_data.Size = new System.Drawing.Size(965, 482);
 			this.dgv_data.TabIndex = 7;
+			this.dgv_data.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_data_CellMouseEnter);
+			this.dgv_data.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_data_CellMouseLeave);
+			this.dgv_data.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_data_RowPostPaint);
 			this.dgv_data.SelectionChanged += new System.EventHandler(this.row_selectionChanged);
 			// 
 			// Form_principal
@@ -231,6 +263,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DataGridView dgv_data;
 		private System.Windows.Forms.Button btn_getDataVehicles;
+		private System.Windows.Forms.Button btn_vehicles_down;
 	}
 }
 

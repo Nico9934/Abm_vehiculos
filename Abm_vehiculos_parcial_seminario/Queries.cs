@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
+using System.Data.Odbc;
 
 namespace Abm_vehiculos_parcial_seminario
 {
@@ -178,6 +179,34 @@ namespace Abm_vehiculos_parcial_seminario
 					}
 				}
 			}
+		}
+
+		public DataTable read_registers_down()
+		{
+			string consulta = "SELECT Codigo,Tipo,Marca,Modelo,Año,Caracteristicas,Patente,Condicion,Kilometraje,Precio,Ingreso FROM Vehiculos WHERE Disponibilidad = 0";
+			DataTable dataTable = new DataTable();
+			SqlConnection Conexion;
+			SqlCommand Command;
+			SqlDataReader Reader;
+
+			try
+			{
+				Conexion = new SqlConnection(dbConnection.strConexion);
+				Command = new SqlCommand(consulta, Conexion);
+
+				Conexion.Open();
+				Reader = Command.ExecuteReader();
+
+				dataTable.Load(Reader);
+
+				Conexion.Close();
+				Reader.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error al leer los registros: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			return dataTable;
 		}
 
 		public string get_lastCode()

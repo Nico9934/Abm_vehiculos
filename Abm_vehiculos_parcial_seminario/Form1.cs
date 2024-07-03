@@ -185,7 +185,7 @@ namespace Abm_vehiculos_parcial_seminario
 		}
 		private void dgv_data_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
 		{
-			using (Pen pen = new Pen(Color.FromArgb(96, 27, 63)))
+			using (Pen pen = new Pen(Color.FromArgb(175, 35, 79)))
 			{
 				int rowIndex = e.RowIndex;
 				DataGridViewRow row = dgv_data.Rows[rowIndex];
@@ -198,7 +198,7 @@ namespace Abm_vehiculos_parcial_seminario
 		{
 			if (e.RowIndex >= 0)
 			{
-				dgv_data.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(143, 112, 138);
+				dgv_data.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(175, 35, 79);
 			}
 		}
 		private void dgv_data_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
@@ -209,6 +209,39 @@ namespace Abm_vehiculos_parcial_seminario
 			}
 		}
 
-		
+		private void btn_MouseEnter(object sender, EventArgs e)
+		{
+			// Cambiar el color de fondo del botón al pasar el ratón por encima
+			Button button = sender as Button;
+			if (button != null)
+			{
+				button.BackColor = Color.FromArgb(175, 35, 79);
+			}
+		}
+
+		private void btn_MouseLeave(object sender, EventArgs e)
+		{
+			// Restaurar el color de fondo original del botón al retirar el ratón
+			Button button = sender as Button;
+			if (button != null)
+			{
+				button.BackColor = Color.FromArgb(101, 32, 71);
+			}
+		}
+
+		private void btn_vehicles_down_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				Queries queries = new Queries();
+				dgv_data.DataSource = queries.read_registers_down();
+				dgv_data.RowPostPaint += new DataGridViewRowPostPaintEventHandler(dgv_data_RowPostPaint);
+				dgv_data.ClearSelection();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Ha ocurrido un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
 	}
 }
