@@ -34,11 +34,12 @@ El proyecto esta creado en su totalidad con WindowsForms. C# y .NET como framewo
 ***
 ### 🛵 Screens 🛵
 <div style="display: flex; flex-wrap: wrap;">
-  <img src="https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-1.png" width="400">
-  <img src="https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-2.png" width="400">
-  <img src="https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-3.png" width="400">
-  <img src="https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-4.png" width="400">
+  <img src="https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-1.png" style="height: 200px; object-fit: cover; margin: 5px;">
+  <img src="https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-2.png" style="height: 200px; object-fit: cover; margin: 5px;">
+  <img src="https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-3.png" style="height: 200px; object-fit: cover; margin: 5px;">
+  <img src="https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-4.png" style="height: 200px; object-fit: cover; margin: 5px;">
 </div>
+
  
   
  
