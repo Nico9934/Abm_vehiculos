@@ -80,6 +80,7 @@ namespace Abm_vehiculos_parcial_seminario
 			if (kilometrage.EndsWith(" km"))
 			{
 				kilometrage = kilometrage.Substring(0, kilometrage.Length - 3).Trim();
+			
 			}
 			int km;
 			if (int.TryParse(kilometrage, out km))
@@ -87,6 +88,23 @@ namespace Abm_vehiculos_parcial_seminario
 				return km >= 0;
 			}
 
+			return false;
+		}
+		public static bool ValidKilometrageCondition(string kilometrage, bool isNew)
+		{
+			int km;
+			if (int.TryParse(kilometrage, out km))
+			{
+				if (km > 0 && isNew)
+				{
+					return false;
+				}
+				if (km == 0 && !isNew)
+				{
+					return false;
+				}
+				return true;
+			}
 			return false;
 		}
 		public static bool ValidEntryDate(string yearStr, string monthStr, string dayStr, string modelYearStr)
@@ -108,6 +126,16 @@ namespace Abm_vehiculos_parcial_seminario
 			}
 			return year >= modelYear;
 		}
+		//public static bool ValidYearAgainstModel(string yearStr, string modelYearStr)
+		//{
+		//	if (!int.TryParse(yearStr, out int year) || !int.TryParse(modelYearStr, out int modelYear))
+		//	{
+		//		return false;
+		//	}
+		//	return year >= modelYear;
+		//}
+
+
 		public static bool CompleteDate(string year, string month, string day)
 		{
 			// Verificar que los parámetros no estén vacíos
@@ -156,5 +184,7 @@ namespace Abm_vehiculos_parcial_seminario
 
 			return true;
 		}
+	
+		
 	}
 }

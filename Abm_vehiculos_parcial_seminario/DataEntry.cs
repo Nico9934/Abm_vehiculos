@@ -44,56 +44,17 @@ namespace Abm_vehiculos_parcial_seminario
 				txb_in_year.Text = Variables.selectedVehicle.año_ingreso;
 			}
 		}
+
 		private void btn_submit_data_Click(object sender, EventArgs e)
 		{
+			ClearErrors();
+			bool hasErrors = !ValidateFields();
+
+			if (hasErrors) return;
+
 			Queries queries = new Queries();
 			Vehiculo newVehicle = new Vehiculo();
 			string newCodigo = Functions.generate_newCode();
-
-			bool hasErrors = false;
-
-			if (!Validations.onlyText(txb_type.Text))
-			{
-				error_type.SetError(txb_type, "Debes ingresar un Tipo válido");
-				hasErrors = true;
-			}
-			if (!Validations.onlyText(txb_brand.Text))
-			{
-				error_type.SetError(txb_brand, "Debes ingresar una marca válida");
-				hasErrors = true;
-			}
-			if (!Validations.onlyText(txb_model.Text))
-			{
-				error_type.SetError(txb_model, "Debes ingresar un modelo válido");
-				hasErrors = true;
-			}
-			if (!Validations.ValidYear(txb_year.Text))
-			{
-				error_type.SetError(txb_year, "Debes ingresar un Año válido");
-				hasErrors = true;
-			}
-			if (!Validations.ValidLicensePlate(txb_patent.Text))
-			{
-				error_type.SetError(txb_patent, "Debes ingresar una patente válida");
-				hasErrors = true;
-			}
-			if (!Validations.ValidNumericPrice(txb_price.Text))
-			{
-				error_type.SetError(txb_price, "Debes ingresar un precio válido");
-				hasErrors = true;
-			}
-			if (!Validations.ValidKilometrage(txb_kilometers.Text))
-			{
-				error_type.SetError(txb_kilometers, "Debes ingresar kilometros");
-				hasErrors = true;
-			}
-			if (!Validations.ValidEntryDate(txb_in_year.Text, txb_in_month.Text, txb_in_day.Text, txb_year.Text))
-			{
-				error_type.SetError(txb_in_year, "Debes ingresar una fecha de ingreso válida");
-				hasErrors = true;
-			}
-
-			if (hasErrors) return;
 
 			newVehicle.codigo = newCodigo;
 			newVehicle.tipo = txb_type.Text;
@@ -163,14 +124,75 @@ namespace Abm_vehiculos_parcial_seminario
 				MessageBox.Show("Ha ocurrido un error: " + ex.Message);
 			}
 		}
-		private void radioButton_CheckedChanged(object sender, EventArgs e)
+		private bool ValidateFields()
 		{
-			if (rb_new.Checked)
+			bool isValid = true;
+
+			if (!Validations.onlyText(txb_type.Text))
 			{
+				error_type.SetError(txb_type, "Este campo solo permite letras");
+				isValid = false;
 			}
-			else if (rb_used.Checked)
+			if (!Validations.onlyText(txb_brand.Text))
 			{
+				error_brand.SetError(txb_brand, "Este campo solo permite letras");
+				isValid = false;
 			}
+			if (!Validations.onlyText(txb_model.Text))
+			{
+				error_model.SetError(txb_model, "Este campo solo permite letras");
+				isValid = false;
+			}
+			if (!Validations.ValidYear(txb_year.Text))
+			{
+				error_year.SetError(txb_year, "Debes ingresar un Año válido. A partir del 1990");
+				isValid = false;
+			}
+			if (!Validations.ValidLicensePlate(txb_patent.Text))
+			{
+				error_patent.SetError(txb_patent, "Debes ingresar una patente válida");
+				isValid = false;
+			}
+			if (!Validations.ValidNumericPrice(txb_price.Text))
+			{
+				error_price.SetError(txb_price, "Debes ingresar un precio válido, con comas al final y decimales. Ej.: 12000,00");
+				isValid = false;
+			}
+			if (!Validations.ValidKilometrage(txb_kilometers.Text))
+			{
+				error_kilometers.SetError(txb_kilometers, "Debes ingresar kilometros");
+				isValid = false;
+			}
+			else if (!Validations.ValidKilometrageCondition(txb_kilometers.Text, rb_new.Checked))
+			{
+				if (rb_new.Checked)
+				{
+					error_kilometers.SetError(txb_kilometers, "No puedes ingresar un auto nuevo con kilometros");
+				}
+				else if (rb_used.Checked)
+				{
+					error_kilometers.SetError(txb_kilometers, "No puedes ingresar un auto usado con 0 kilometros");
+				}
+				isValid = false;
+			}
+			if (!Validations.ValidEntryDate(txb_in_year.Text, txb_in_month.Text, txb_in_day.Text, txb_year.Text))
+			{
+				error_in_year.SetError(txb_in_year, "Debes ingresar una fecha de ingreso válida");
+				isValid = false;
+			}
+			return isValid;
 		}
+		private void ClearErrors()
+		{
+			error_type.Clear();
+			error_brand.Clear();
+			error_model.Clear();
+			error_year.Clear();
+			error_patent.Clear();
+			error_price.Clear();
+			error_kilometers.Clear();
+			error_in_year.Clear();
+		}
+		
 	}
 }

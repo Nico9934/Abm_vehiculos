@@ -106,7 +106,7 @@
 			this.txb_in_year.Name = "txb_in_year";
 			this.txb_in_year.ShortcutsEnabled = false;
 			this.txb_in_year.Size = new System.Drawing.Size(90, 30);
-			this.txb_in_year.TabIndex = 39;
+			this.txb_in_year.TabIndex = 13;
 			this.txb_in_year.Text = "****";
 			this.txb_in_year.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
@@ -121,7 +121,7 @@
 			this.txb_in_month.Name = "txb_in_month";
 			this.txb_in_month.ShortcutsEnabled = false;
 			this.txb_in_month.Size = new System.Drawing.Size(42, 30);
-			this.txb_in_month.TabIndex = 33;
+			this.txb_in_month.TabIndex = 12;
 			this.txb_in_month.Text = "**";
 			this.txb_in_month.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
@@ -136,7 +136,7 @@
 			this.txb_in_day.Name = "txb_in_day";
 			this.txb_in_day.ShortcutsEnabled = false;
 			this.txb_in_day.Size = new System.Drawing.Size(39, 30);
-			this.txb_in_day.TabIndex = 32;
+			this.txb_in_day.TabIndex = 11;
 			this.txb_in_day.Text = "**";
 			this.txb_in_day.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
@@ -147,10 +147,11 @@
 			this.txb_year.Font = new System.Drawing.Font("Calibri", 12F);
 			this.txb_year.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
 			this.txb_year.Location = new System.Drawing.Point(192, 206);
+			this.txb_year.MaxLength = 4;
 			this.txb_year.Name = "txb_year";
 			this.txb_year.ShortcutsEnabled = false;
 			this.txb_year.Size = new System.Drawing.Size(300, 30);
-			this.txb_year.TabIndex = 30;
+			this.txb_year.TabIndex = 4;
 			// 
 			// txb_model
 			// 
@@ -159,10 +160,11 @@
 			this.txb_model.Font = new System.Drawing.Font("Calibri", 12F);
 			this.txb_model.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
 			this.txb_model.Location = new System.Drawing.Point(192, 151);
+			this.txb_model.MaxLength = 40;
 			this.txb_model.Name = "txb_model";
 			this.txb_model.ShortcutsEnabled = false;
 			this.txb_model.Size = new System.Drawing.Size(300, 30);
-			this.txb_model.TabIndex = 29;
+			this.txb_model.TabIndex = 3;
 			// 
 			// txb_brand
 			// 
@@ -171,10 +173,11 @@
 			this.txb_brand.Font = new System.Drawing.Font("Calibri", 12F);
 			this.txb_brand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
 			this.txb_brand.Location = new System.Drawing.Point(192, 94);
+			this.txb_brand.MaxLength = 40;
 			this.txb_brand.Name = "txb_brand";
 			this.txb_brand.ShortcutsEnabled = false;
 			this.txb_brand.Size = new System.Drawing.Size(300, 30);
-			this.txb_brand.TabIndex = 28;
+			this.txb_brand.TabIndex = 2;
 			// 
 			// txb_type
 			// 
@@ -183,10 +186,11 @@
 			this.txb_type.Font = new System.Drawing.Font("Calibri", 12F);
 			this.txb_type.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
 			this.txb_type.Location = new System.Drawing.Point(192, 36);
+			this.txb_type.MaxLength = 40;
 			this.txb_type.Name = "txb_type";
 			this.txb_type.ShortcutsEnabled = false;
 			this.txb_type.Size = new System.Drawing.Size(300, 30);
-			this.txb_type.TabIndex = 27;
+			this.txb_type.TabIndex = 1;
 			// 
 			// btn_submit_data
 			// 
@@ -198,7 +202,7 @@
 			this.btn_submit_data.Location = new System.Drawing.Point(807, 370);
 			this.btn_submit_data.Name = "btn_submit_data";
 			this.btn_submit_data.Size = new System.Drawing.Size(254, 52);
-			this.btn_submit_data.TabIndex = 41;
+			this.btn_submit_data.TabIndex = 14;
 			this.btn_submit_data.Text = "Agregar";
 			this.btn_submit_data.UseVisualStyleBackColor = false;
 			this.btn_submit_data.Click += new System.EventHandler(this.btn_submit_data_Click);
@@ -318,9 +322,10 @@
 			this.txb_characteristics.Font = new System.Drawing.Font("Calibri", 12F);
 			this.txb_characteristics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
 			this.txb_characteristics.Location = new System.Drawing.Point(192, 263);
+			this.txb_characteristics.MaxLength = 200;
 			this.txb_characteristics.Name = "txb_characteristics";
 			this.txb_characteristics.Size = new System.Drawing.Size(300, 37);
-			this.txb_characteristics.TabIndex = 49;
+			this.txb_characteristics.TabIndex = 5;
 			// 
 			// txb_kilometers
 			// 
@@ -329,10 +334,11 @@
 			this.txb_kilometers.Font = new System.Drawing.Font("Calibri", 12F);
 			this.txb_kilometers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
 			this.txb_kilometers.Location = new System.Drawing.Point(717, 206);
+			this.txb_kilometers.MaxLength = 10;
 			this.txb_kilometers.Name = "txb_kilometers";
 			this.txb_kilometers.ShortcutsEnabled = false;
 			this.txb_kilometers.Size = new System.Drawing.Size(300, 30);
-			this.txb_kilometers.TabIndex = 53;
+			this.txb_kilometers.TabIndex = 10;
 			// 
 			// txb_price
 			// 
@@ -341,10 +347,11 @@
 			this.txb_price.Font = new System.Drawing.Font("Calibri", 12F);
 			this.txb_price.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
 			this.txb_price.Location = new System.Drawing.Point(717, 150);
+			this.txb_price.MaxLength = 30;
 			this.txb_price.Name = "txb_price";
 			this.txb_price.ShortcutsEnabled = false;
 			this.txb_price.Size = new System.Drawing.Size(300, 30);
-			this.txb_price.TabIndex = 52;
+			this.txb_price.TabIndex = 9;
 			// 
 			// txb_patent
 			// 
@@ -353,10 +360,11 @@
 			this.txb_patent.Font = new System.Drawing.Font("Calibri", 12F);
 			this.txb_patent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(35)))), ((int)(((byte)(79)))));
 			this.txb_patent.Location = new System.Drawing.Point(717, 35);
+			this.txb_patent.MaxLength = 10;
 			this.txb_patent.Name = "txb_patent";
 			this.txb_patent.ShortcutsEnabled = false;
 			this.txb_patent.Size = new System.Drawing.Size(300, 30);
-			this.txb_patent.TabIndex = 50;
+			this.txb_patent.TabIndex = 6;
 			// 
 			// rb_new
 			// 
@@ -367,11 +375,10 @@
 			this.rb_new.Location = new System.Drawing.Point(729, 94);
 			this.rb_new.Name = "rb_new";
 			this.rb_new.Size = new System.Drawing.Size(103, 33);
-			this.rb_new.TabIndex = 54;
+			this.rb_new.TabIndex = 7;
 			this.rb_new.TabStop = true;
 			this.rb_new.Text = "Nuevo";
 			this.rb_new.UseVisualStyleBackColor = true;
-			this.rb_new.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
 			// 
 			// rb_used
 			// 
@@ -381,11 +388,10 @@
 			this.rb_used.Location = new System.Drawing.Point(866, 94);
 			this.rb_used.Name = "rb_used";
 			this.rb_used.Size = new System.Drawing.Size(100, 33);
-			this.rb_used.TabIndex = 55;
+			this.rb_used.TabIndex = 8;
 			this.rb_used.TabStop = true;
 			this.rb_used.Text = "Usado";
 			this.rb_used.UseVisualStyleBackColor = true;
-			this.rb_used.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
 			// 
 			// error_type
 			// 

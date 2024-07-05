@@ -11,7 +11,8 @@ namespace Abm_vehiculos_parcial_seminario
 {
 	public class DBConnection
 	{
-		public string strConexion = "Data Source = NOTEBOOK_NICO; Initial Catalog = Concesionaria; Integrated Security = True;";
+		//public string strConexionParcial = "Data Source = NOTEBOOK_NICO; Initial Catalog = Concesionaria_DB; Integrated Security = True;";
+		public string strConexion = "Data Source = NOTEBOOK_NICO; Initial Catalog = Concesionaria_parcial; Integrated Security = True;";
 
 		static SqlConnection Conexion;
 

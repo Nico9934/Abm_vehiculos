@@ -42,6 +42,8 @@ namespace Abm_vehiculos_parcial_seminario
 			}
 		}
 
+
+		
 		private void btn_getDataVehicles_Click(object sender, EventArgs e)
 		{
 			LoadData();
@@ -183,6 +185,64 @@ namespace Abm_vehiculos_parcial_seminario
 			//	}
 			//}
 		}
+		private void btn_vehicles_down_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				
+				Queries queries = new Queries();
+				dgv_data.DataSource = queries.read_registers_down();
+				dgv_data.RowPostPaint += new DataGridViewRowPostPaintEventHandler(dgv_data_RowPostPaint);
+				dgv_data.ClearSelection();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Ha ocurrido un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+		private void txb_search_TextChanged(object sender, EventArgs e)
+		{
+			try
+			{
+				Queries queries = new Queries();
+				string searchText = txb_search.Text;
+				dgv_data.DataSource = queries.read_filter_registers(searchText);
+				dgv_data.RowPostPaint += new DataGridViewRowPostPaintEventHandler(dgv_data_RowPostPaint);
+				dgv_data.ClearSelection();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Ha ocurrido un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+		private void btn_deleteRegister_Click(object sender, EventArgs e)
+		{
+			if (dgv_data.SelectedRows.Count == 0)
+			{
+				MessageBox.Show("Debes seleccionar un vehiculo", "Oops...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				try
+				{
+
+					Queries queries = new Queries();
+					bool response = queries.delete_register(Variables.selectedVehicle.codigo);
+
+					if (response)
+					{
+						dgv_data.ClearSelection();
+						LoadData(); //
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Ha ocurrido un error: " + ex.Message);
+					System.Media.SystemSounds.Hand.Play();
+				}
+			}
+		}
+		// Interfaz Grafica
 		private void dgv_data_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
 		{
 			using (Pen pen = new Pen(Color.FromArgb(175, 35, 79)))
@@ -208,7 +268,6 @@ namespace Abm_vehiculos_parcial_seminario
 				dgv_data.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(105, 35, 79);
 			}
 		}
-
 		private void btn_MouseEnter(object sender, EventArgs e)
 		{
 			// Cambiar el color de fondo del botón al pasar el ratón por encima
@@ -218,7 +277,6 @@ namespace Abm_vehiculos_parcial_seminario
 				button.BackColor = Color.FromArgb(175, 35, 79);
 			}
 		}
-
 		private void btn_MouseLeave(object sender, EventArgs e)
 		{
 			// Restaurar el color de fondo original del botón al retirar el ratón
@@ -228,13 +286,32 @@ namespace Abm_vehiculos_parcial_seminario
 				button.BackColor = Color.FromArgb(101, 32, 71);
 			}
 		}
-
-		private void btn_vehicles_down_Click(object sender, EventArgs e)
+		private void rb_all_CheckedChanged_1(object sender, EventArgs e)
 		{
 			try
 			{
 				Queries queries = new Queries();
-				dgv_data.DataSource = queries.read_registers_down();
+				if (rb_new.Checked)
+				{
+					dgv_data.DataSource = queries.read_filter_condition_registers("SELECT Codigo, " +
+						"Tipo, Marca, Modelo, Año, Caracteristicas, Patente, Condicion, Kilometraje, " +
+						"Precio, Ingreso FROM Vehiculos " +
+						"WHERE Condicion = 'Nuevo' AND Disponibilidad = 1");
+				}
+				else if (rb_used.Checked)
+				{
+					dgv_data.DataSource = queries.read_filter_condition_registers("SELECT Codigo," +
+						"Tipo, Marca, Modelo, Año, Caracteristicas, Patente, Condicion," +
+						" Kilometraje, Precio, Ingreso FROM Vehiculos " +
+						"WHERE Condicion = 'Usado' AND Disponibilidad = 1");
+				}
+				else if (rb_all.Checked)
+				{
+					dgv_data.DataSource = queries.read_filter_condition_registers("SELECT Codigo," +
+						" Tipo, Marca, Modelo, Año, Caracteristicas, Patente, Condicion, " +
+						"Kilometraje, Precio, Ingreso FROM Vehiculos WHERE Disponibilidad = 1");
+				}
+
 				dgv_data.RowPostPaint += new DataGridViewRowPostPaintEventHandler(dgv_data_RowPostPaint);
 				dgv_data.ClearSelection();
 			}
@@ -243,5 +320,7 @@ namespace Abm_vehiculos_parcial_seminario
 				MessageBox.Show("Ha ocurrido un error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+
+		
 	}
 }

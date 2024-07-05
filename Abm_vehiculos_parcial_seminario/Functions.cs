@@ -37,5 +37,6 @@ namespace Abm_vehiculos_parcial_seminario
 			return siguienteCodigo.ToString().PadLeft(4, '0');
 		}
 
+		
 	}
 }
