@@ -32,6 +32,22 @@ El proyecto esta creado en su totalidad con WindowsForms. C# y .NET como framewo
 - **Conexión a DB:** El programa se conecta a una Base de datos SQL, que permite administrar los datos de manera óptima. 
 
 ***
+### 🛵 Screens 🛵
+
+  <img src="(https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-1.png)" width="400"
+  <img src="(https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-2.png)" width="400"
+  <img src="(https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-3.png)" width="400"
+  <img src="(https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-4.png)" width="400"
+  <img src="(https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-4.png)" width="700"
+
+
+
+ 
+  
+ 
+
+***
+
 
 ## 🌐 Referencias
 ### Materia: Seminario de programación 
