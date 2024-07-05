@@ -39,6 +39,10 @@ El proyecto esta creado en su totalidad con WindowsForms. C# y .NET como framewo
   <img src="(https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-3.png)" width="400"
   <img src="(https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-4.png)" width="400"
   <img src="(https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-4.png)" width="700"
+![Screen 1](https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-1.png)
+![Screen 2](https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-2.png)
+![Screen 3](https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-3.png)
+![Screen 4](https://github.com/Nico9934/Abm_vehiculos/blob/master/Abm_vehiculos_parcial_seminario/src/Screen-4.png)
 
 
 
