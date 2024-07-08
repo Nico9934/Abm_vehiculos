@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Abm_vehiculos_parcial_seminario
 {
-	public partial class DataEntry : Form
+	public partial class D : Form
 	{
 		public delegate void RecordCreatedEventHandler(object sender, EventArgs e);
 		public event RecordCreatedEventHandler RecordCreated;
 		private bool isEditMode;
 
-		public DataEntry(bool isEditMode = false)
+		public D(bool isEditMode = false)
 		{
 			InitializeComponent();
 			this.isEditMode = isEditMode;

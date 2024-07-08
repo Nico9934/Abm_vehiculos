@@ -1,6 +1,6 @@
 ﻿namespace Abm_vehiculos_parcial_seminario
 {
-	partial class DataEntry
+	partial class D
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -425,7 +425,7 @@
 			// 
 			this.error_in_year.ContainerControl = this;
 			// 
-			// DataEntry
+			// D
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -457,7 +457,8 @@
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
-			this.Name = "DataEntry";
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+			this.Name = "D";
 			this.Text = "DataEntry";
 			this.Load += new System.EventHandler(this.DataEntry_Load);
 			((System.ComponentModel.ISupportInitialize)(this.error_type)).EndInit();

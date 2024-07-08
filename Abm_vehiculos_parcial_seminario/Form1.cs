@@ -52,8 +52,8 @@ namespace Abm_vehiculos_parcial_seminario
 		{
 			Functions.clean_fields();
 			dgv_data.ClearSelection();
-			DataEntry formData = new DataEntry();
-			formData.RecordCreated += new DataEntry.RecordCreatedEventHandler(this.OnRecordCreated);
+			D formData = new D();
+			formData.RecordCreated += new D.RecordCreatedEventHandler(this.OnRecordCreated);
 			formData.ShowDialog();
 		}
 		private void btn_unsubscribeVehicle_Click(object sender, EventArgs e)
@@ -92,8 +92,8 @@ namespace Abm_vehiculos_parcial_seminario
 			}
 			else
 			{
-				DataEntry formData = new DataEntry(true);
-				formData.RecordCreated += new DataEntry.RecordCreatedEventHandler(this.OnRecordCreated);
+				D formData = new D(true);
+				formData.RecordCreated += new D.RecordCreatedEventHandler(this.OnRecordCreated);
 				formData.ShowDialog();
 			}
 		}
